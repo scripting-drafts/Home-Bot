@@ -3,7 +3,7 @@ Remote Appliances Control with pyTelegramBotAPI
 
 Get a Token from Bot_Father and paste it 'TELEGRAM_TOKEN = here'.
 
-This bot uses urllib2 to flick web controlled switches within your local network. Therefore the URLs you need are probably raw IP's with subdomains like /number_of_gpio/on_or_off.
+This bot uses urllib2 to flick web controlled switches within your local network. Therefore the URLs you need are probably raw IP's (lines 22, 30 and 38) with subdomains like /number_of_gpio/on_or_off (lines 27, 35 and 43).
 
 In order to check wether your appliances are on or off, the script fetches text from the switches URLs and looks for references to the name of the appliance and its state. I.e. to tell the script those keywords you will have to write them at lines 23 and 25.
 
