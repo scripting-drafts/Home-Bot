@@ -45,7 +45,7 @@ def callback_query(call):
 
 @bot.message_handler (commands=["home"])                                                     #(func=lambda message: True)
 def home_handler(message):
-	if message.chat.id == UNQUOTED_MESSENGER_ID:
+	if message.chat.id == UNQUOTED_CHAT_ID:
 		bot.send_message(message.chat.id, "get by", reply_markup=gen_markup())
 	else:
                 bot.send_message(message.chat.id, "forbidden", reply_markup="")
