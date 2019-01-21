@@ -10,3 +10,5 @@ In order to check wether your appliances are on or off, the script fetches text 
 Then the bot stores the current state of the appliance, sends an on/off command accordingly and prints a message for the user to notice the change of state.
 
 To make sure you're the only one talking to your home bot you can write your user chat_id at line 48. Or else comment lines 48, 50, 51 and unindent line 49.
+
+This works terribly well with web servers hosted on GPIO capable microprocessors. I.e. Arduino/ESP8266/ESP32...
