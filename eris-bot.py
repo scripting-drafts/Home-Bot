@@ -19,29 +19,29 @@ def gen_markup():
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
 	if call.data == "cb_heater":
-		heaterState = urllib2.urlopen("YOUR SWITCH URL HERE").read()
+		heaterState = urllib2.urlopen("YOUR HEATER SWITCH URL").read()
 		if "TEXT IN PAGE WHEN ON" in heaterState:
 			heaterState = "off"
 		elif "TEXT IN PAGE WHEN OFF" in heaterState:
 			heaterState = "on"
-		urllib2.urlopen("YOUR SWITCH URL HERE" + heaterState).read()
+		urllib2.urlopen("YOUR HEATER SWITCH URL/GPIO NUMBER/" + heaterState).read()
 		bot.answer_callback_query(call.id, "Heater is " + heaterState)
 	elif call.data == "cb_air":
-		airState = urllib2.urlopen("YOUR SWITCH URL HERE").read()
+		airState = urllib2.urlopen("YOUR AIR SWITCH URL").read()
                 if "TEXT IN PAGE WHEN ON" in airState:
                         airState = "off"
                 elif "TEXT IN PAGE WHEN OFF" in airState:
                         airState = "on"
-                urllib2.urlopen("YOUR SWITCH URL HERE" + airState).read()
+                urllib2.urlopen("YOUR AIR SWITCH URL/GPIO NUMBER/" + airState).read()
                 bot.answer_callback_query(call.id, "Air Conditioner is " + airState)
 	elif call.data == "cb_noodles":
-		noodles = urllib2.urlopen("http://192.168.1.144").read()
+		noodlesState = urllib2.urlopen("YOUR NOODLES SWITCH URL").read()
 		if "instant noodles - It's on." in noodles:
-			noodles = "off"
+			noodlesState = "off"
 		elif "instant noodles - It's off." in noodles:
-			noodles = "on"
-		urllib2.urlopen("http://192.168.1.144/27/" + noodles).read()
-		bot.answer_callback_query(call.id, "Instant Noodles are " + noodles)
+			noodlesState = "on"
+		urllib2.urlopen("YOUR NOODLES SWITCH URL/GPIO NUMBER/" + noodlesState).read()
+		bot.answer_callback_query(call.id, "Instant Noodles are " + noodlesState)
 
 @bot.message_handler (commands=["home"])                                                     #(func=lambda message: True)
 def home_handler(message):
