@@ -1,6 +1,9 @@
 # Home-Bot
 Remote Appliances Control with pyTelegramBotAPI
 
+New requirements:
+ - pip install python-telegram-bot==13.13
+
 Get a Token from @Bot_Father and paste it 'TELEGRAM_TOKEN = here'.
 
 This bot uses urllib2 to flick web controlled switches within your local network. Therefore the URLs you need are probably raw IP's (lines 22, 30 and 38) with subdomains like /number_of_gpio (lines 27, 35 and 43) and /on_or_off. The later is given automatically when the following part is properly configured.
